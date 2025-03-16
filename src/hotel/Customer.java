@@ -3,18 +3,16 @@ package hotel;
 public class Customer {
 
     private String name;
-    private String number;
-    public Object getName;
+    private String phoneNo;
 
     public Customer() {}
 
-    public Customer(String name, String number) {
+    public Customer(String name, String phoneNo) {
         super();
         this.name = name;
-        this.number = number;
+        this.phoneNo = phoneNo;
     }
-
-
+    
     public String getName() {
         return name;
     }
@@ -23,12 +21,12 @@ public class Customer {
         this.name = name;
     }
 
-    public String getNumber() {
-        return number;
+    public String getPhoneNo() {
+        return phoneNo;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
     }
 
 }
