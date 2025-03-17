@@ -39,8 +39,21 @@ public class CusService {
         int days = Integer.parseInt(scan.nextLine());
         System.out.println("예약자분의 성함을 알려주세요.");
         String name = scan.nextLine();
-        System.out.println("예약자분의 연락처를 알려주세요.");
-        String number = scan.nextLine();
+        //System.out.println("예약자분의 연락처를 알려주세요.");
+        //String number = scan.nextLine();
+
+        String number ="";
+        while (true) {
+            System.out.print("예약자분의 연락처를 알려주세요.");
+            number = scan.nextLine();
+            if(number.matches("^\\d{3}-\\d{4}-\\d{4}$")){
+                break;
+            } else {
+                System.out.println("000-0000-0000 형식으로 기입하시오");
+            }
+        }
+
+        String fNumber = number;
 
         Hotel.rooms.stream()
                 .filter(room -> room.getType().equals(type))
@@ -51,7 +64,7 @@ public class CusService {
                     room.setTotal(room.getTotal() - 1);
 
                     // 1. 고객 정보 저장
-                    saveCusInfo(name, number);
+                    saveCusInfo(name, fNumber);
 
                     // 2. 예약 정보 저장
                     Hotel.resers.add(new Reservation(getDate()+"-"+resNum,name, room.getType(),room.getPrice()*days));
