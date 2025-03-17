@@ -67,6 +67,13 @@ public class HotelServiceImpl implements HotelService {
                     .findFirst()
                     .ifPresent(bill -> {
 
+                        Hotel.rooms.stream()
+                                .filter(room -> room.getType().equals(bill.getType()))
+                                .findFirst()
+                                .ifPresent(room -> {
+                                    room.setTotal(room.getTotal()+1);
+                                });
+
                         // 계산서 출력
                         System.out.println("---------------------------------------------------------");
                         System.out.println("객실 번호: " + bill.getBillNum() +
