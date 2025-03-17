@@ -12,8 +12,8 @@ public class Hotel {
 
     public static void welcome() {
         Scanner scan = new Scanner(System.in);
-        HotelService hotel = new HotelService();
-        CusService cus = new CusService();
+        HotelServiceImpl hotel = new HotelServiceImpl();
+        CusServiceImpl cus = new CusServiceImpl();
 
         hotel.setRooms();
 
@@ -64,6 +64,7 @@ public class Hotel {
                 case 6:
                     // 종료하기
                     System.out.println("프로그램을 종료합니다.");
+                    scan.close();
                     System.exit(0);
                     break;
                 default:
