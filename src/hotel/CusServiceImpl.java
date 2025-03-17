@@ -88,11 +88,13 @@ public class CusServiceImpl implements CusService {
                     .filter(reser -> reser.getResNum().equals(resNum))
                     .findFirst()
                     .ifPresent(reser -> {
-
+                        System.out.println("-----------------------------------------------------------------------");
                         System.out.println("예약 번호: " + reser.getResNum() +
                                 "\n객실 유형: " + reser.getType() +
                                 "\n고객 이름: " + reser.getCusName() +
                                 "\n가격: " + reser.getPrice());
+                        System.out.println("-----------------------------------------------------------------------");
+
 
                     });
         }else{
