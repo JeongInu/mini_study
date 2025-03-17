@@ -37,17 +37,15 @@ public class HotelServiceImpl implements HotelService {
                         }else{
                             billNum = "N"+roomNum();
                         }
-                        System.out.println("-----------------------------------------------------------------------");
+                        System.out.println("---------------------------------------------------------");
                         System.out.println("환영합니다. 객실 번호는 : " + billNum);
-                        System.out.println("-----------------------------------------------------------------------");
                         Hotel.bills.add(new Bill(billNum,reser.getType(),reser.getCusName(),reser.getPrice()));
                         Hotel.resers.remove(reser);
 
                     });
         }else{
-            System.out.println("-----------------------------------------------------------------------");
+            System.out.println("---------------------------------------------------------");
             System.out.println("예약 번호를 확인하세요.");
-            System.out.println("-----------------------------------------------------------------------");
         }
 
 
@@ -70,12 +68,11 @@ public class HotelServiceImpl implements HotelService {
                     .ifPresent(bill -> {
 
                         // 계산서 출력
-                        System.out.println("-----------------------------------------------------------------------");
+                        System.out.println("---------------------------------------------------------");
                         System.out.println("객실 번호: " + bill.getBillNum() +
                                 "\n객실 유형: " + bill.getType() +
                                 "\n고객 성함: " + bill.getCusName() +
                                 "\n최종 가격: " + bill.getTotalPrice());
-                        System.out.println("-----------------------------------------------------------------------");
 
                         // 영수증 출력
                         System.out.println("납부 방식을 선택해주세요(1~3). 1.현금|2.신용카드|3.수표");
@@ -98,13 +95,12 @@ public class HotelServiceImpl implements HotelService {
                         }
 
                         System.out.println("영수증을 출력합니다.");
-                        System.out.println("-----------------------------------------------------------------------");
+                        System.out.println("---------------------------------------------------------");
                         System.out.println("객실 번호: " + bill.getBillNum() +
                                 "\n객실 유형: " + bill.getType() +
                                 "\n고객 성함: " + bill.getCusName() +
                                 "\n최종 가격: " + bill.getTotalPrice() +
                                 "\n납부 방법: " + payment);
-                        System.out.println("-----------------------------------------------------------------------");
 
                     });
 

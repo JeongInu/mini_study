@@ -35,7 +35,7 @@ public class CusServiceImpl implements CusService {
 
         System.out.println("원하시는 유형의 방을 입력해주세요.");
         String type = scan.nextLine();
-        System.out.println("몇 일이나 머무실 건가요?");
+        System.out.println("며칠이나 머무실 건가요?");
         int days = Integer.parseInt(scan.nextLine());
         System.out.println("예약자분의 성함을 알려주세요.");
         String name = scan.nextLine();
@@ -44,7 +44,7 @@ public class CusServiceImpl implements CusService {
 
         String number ="";
         while (true) {
-            System.out.print("예약자분의 연락처를 알려주세요.");
+            System.out.println("예약자분의 연락처를 알려주세요.");
             number = scan.nextLine();
             if(number.matches("^\\d{3}-\\d{4}-\\d{4}$")){
                 break;
@@ -88,14 +88,11 @@ public class CusServiceImpl implements CusService {
                     .filter(reser -> reser.getResNum().equals(resNum))
                     .findFirst()
                     .ifPresent(reser -> {
-                        System.out.println("-----------------------------------------------------------------------");
+                        System.out.println("---------------------------------------------------------");
                         System.out.println("예약 번호: " + reser.getResNum() +
                                 "\n객실 유형: " + reser.getType() +
                                 "\n고객 이름: " + reser.getCusName() +
                                 "\n가격: " + reser.getPrice());
-                        System.out.println("-----------------------------------------------------------------------");
-
-
                     });
         }else{
             System.out.println("예약 번호를 확인하세요.");

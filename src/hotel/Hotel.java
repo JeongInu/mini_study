@@ -18,6 +18,7 @@ public class Hotel {
         hotel.setRooms();
 
         while (true) {
+            System.out.println("---------------------------------------------------------");
             System.out.println("1. 객실 예약");
             System.out.println("2. 예약 확인");
             System.out.println("3. 예약 취소");
@@ -29,14 +30,15 @@ public class Hotel {
 
             while (true) {
                 try {
+                    System.out.print("메뉴 선택: ");
                     pickMe = Integer.parseInt(scan.nextLine());
                     if (pickMe < 1 || pickMe > 6) {
-                        System.out.println("1부터 6");
+                        System.out.println("1~6 사이로 입력하세요.");
                         continue;
                     }
                     break;
                 } catch (NumberFormatException e) {
-                    System.out.println("숫자");
+                    System.out.println("숫자로 입력하세요.");
                 }
             }
 
