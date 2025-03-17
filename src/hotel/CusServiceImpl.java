@@ -110,6 +110,14 @@ public class CusServiceImpl implements CusService {
                     .filter(reser -> reser.getResNum().equals(resNum))
                     .findFirst()
                     .ifPresent(reser -> {
+
+                        Hotel.rooms.stream()
+                                .filter(room -> room.getType().equals(reser.getType()))
+                                .findFirst()
+                                .ifPresent(room -> {
+                                    room.setTotal(room.getTotal()+1);
+                                });
+
                         Hotel.resers.remove(reser);
                         System.out.println("예약 취소 완료");
                     });
